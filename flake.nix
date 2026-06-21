@@ -18,18 +18,9 @@ rec {
       url = "github:cachix/devenv";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "rust-overlay";
     };
     asus-dialpad-driver = {
       url = "github:asus-linux-drivers/asus-dialpad-driver";
@@ -53,10 +44,6 @@ rec {
     };
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dank-material-shell = {
@@ -117,11 +104,7 @@ rec {
       flake-utils,
       home-manager,
       devenv,
-      nur,
-      hyprland,
       vscode-extensions,
-      aagl,
-      dank-material-shell,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -158,9 +141,7 @@ rec {
                 inherit self inputs username;
               };
               modules = [
-                hyprland.homeManagerModules.default
                 self.homeManagerModules.default
-                ./users/.shared
                 ./users/${username}
               ];
             }
@@ -203,13 +184,7 @@ rec {
               ;
           };
           modules = [
-            hyprland.nixosModules.default
-            dank-material-shell.nixosModules.greeter
-            nur.modules.nixos.default
-            home-manager.nixosModules.home-manager
-            aagl.nixosModules.default
             self.nixosModules.default
-            ./hosts/.shared
             ./hosts/${hostname}
           ];
         }

@@ -6,10 +6,14 @@
 }:
 with lib;
 let
-  cfg = config.modules.nvidia-prime;
+  cfg = config.modules.gpu.nvidia-prime;
 in
 {
-  options.modules.nvidia-prime = {
+  imports = [
+    ./nvidia.nix
+  ];
+
+  options.modules.gpu.nvidia-prime = {
     enable = mkEnableOption "Enable Nvidia Prime Hybrid GPU Offload";
     intelBusId = mkOption {
       type = types.nullOr types.str;
@@ -45,6 +49,7 @@ in
         }
       ];
 
+      modules.gpu.nvidia.enable = true;
       hardware.nvidia = {
         prime = {
           offload = {

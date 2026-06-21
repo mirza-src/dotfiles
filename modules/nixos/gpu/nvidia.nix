@@ -6,18 +6,19 @@
 }:
 with lib;
 let
-  cfg = config.modules.gpu-nvidia;
+  cfg = config.modules.gpu.nvidia;
 in
 {
   imports = [
-    # ./gpu.nix
+    ./gpu.nix
   ];
 
-  options.modules.gpu-nvidia = {
+  options.modules.gpu.nvidia = {
     enable = mkEnableOption "Enable Nvidia GPU Configuration";
   };
 
   config = mkIf cfg.enable {
+    modules.gpu.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     nixpkgs.config.cudaSupport = true;
 

@@ -17,6 +17,9 @@
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+
+    inputs.hyprland.nixosModules.default
+    inputs.dank-material-shell.nixosModules.greeter
   ];
 
   environment.etc.crypttab = {
@@ -55,6 +58,7 @@
     networkmanager-openconnect
   ];
 
+  modules.defaults.enable = true;
   modules.shell.enable = true;
   modules.nix.enable = true;
   services.rke2.enable = false;
@@ -69,12 +73,11 @@
   modules.audio.enable = true;
   modules.bluetooth.enable = true;
   modules.asus.enable = true;
-  modules.gpu.enable = true;
-  modules.gpu-amd.enable = true;
-  modules.gpu-nvidia.enable = true;
-  modules.nvidia-prime.enable = true;
-  modules.nvidia-prime.amdBusId = "PCI:102:0:0";
-  modules.nvidia-prime.nvidiaBusId = "PCI:101:0:0";
+  modules.gpu.amd.enable = true;
+  modules.gpu.nvidia.enable = true;
+  modules.gpu.nvidia-prime.enable = true;
+  modules.gpu.nvidia-prime.amdBusId = "PCI:102:0:0";
+  modules.gpu.nvidia-prime.nvidiaBusId = "PCI:101:0:0";
   modules.gaming.enable = true;
   modules.power.enable = true;
   services.system76-scheduler.enable = true;

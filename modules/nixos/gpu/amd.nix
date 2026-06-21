@@ -6,18 +6,19 @@
 }:
 with lib;
 let
-  cfg = config.modules.gpu-amd;
+  cfg = config.modules.gpu.amd;
 in
 {
   imports = [
-    # ./gpu.nix
+    ./gpu.nix
   ];
 
-  options.modules.gpu-amd = {
+  options.modules.gpu.amd = {
     enable = mkEnableOption "Enable AMD GPU Options";
   };
 
   config = mkIf cfg.enable {
+    modules.gpu.enable = true;
     boot.initrd.kernelModules = [ "amdgpu" ];
     # services.xserver.videoDrivers = [ "amdgpu" ];
   };

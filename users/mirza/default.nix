@@ -73,6 +73,7 @@ in
     pipewireSupport = true;
   }) { };
 
+  modules.defaults.enable = true;
   modules.giantswarm.enable = true;
   modules.hyprland.enable = true;
   programs.dsearch.enable = true;

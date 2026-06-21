@@ -3,6 +3,7 @@
   pkgs,
   config,
   options,
+  inputs,
   ...
 }:
 with lib;
@@ -10,6 +11,10 @@ let
   cfg = config.modules.hyprland;
 in
 {
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+  ];
+
   options.modules.hyprland = {
     enable = mkEnableOption "Enable Hyprland desktop environment";
   };

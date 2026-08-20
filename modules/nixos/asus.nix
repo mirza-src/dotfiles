@@ -19,7 +19,7 @@ in
 
     ghelper = {
       enable = lib.mkEnableOption "G-Helper Linux" // {
-        default = true;
+        default = false;
       };
 
       package = lib.mkOption {
@@ -40,7 +40,7 @@ in
     };
   };
 
-  config =
+  config = lib.mkMerge [
     (mkIf cfg.enable {
       nixpkgs.overlays = [
         inputs.cachyos-kernel.overlays.default
@@ -63,7 +63,7 @@ in
       programs.rog-control-center.enable = true;
       services.asus-dialpad-driver.enable = false;
     })
-    // (lib.mkIf cfg.ghelper.enable {
+    (lib.mkIf cfg.ghelper.enable {
       environment.systemPackages = [ cfg.ghelper.package ];
       services.udev.packages = [ cfg.ghelper.package ];
       systemd.packages = lib.mkIf cfg.ghelper.enableGpuBootService [ cfg.ghelper.package ];
@@ -77,5 +77,6 @@ in
           Restart = "on-failure";
         };
       };
-    });
+    })
+  ];
 }

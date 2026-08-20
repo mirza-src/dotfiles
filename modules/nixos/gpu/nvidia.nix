@@ -21,6 +21,16 @@ in
     modules.gpu.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     nixpkgs.config.cudaSupport = true;
+    services.supergfxd.enable = false;
+    services.cardwired = {
+      enable = true;
+      settings = {
+        battery_auto_switch = true;
+        battery_auto_switch_mode = "smart";
+        experimental_nvidia_block = true;
+        external_display_auto_switch = true;
+      };
+    };
 
     environment.systemPackages = with pkgs; [
       nvitop

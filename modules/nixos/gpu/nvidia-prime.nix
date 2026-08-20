@@ -62,15 +62,13 @@ in
           nvidiaBusId = mkIf (cfg.nvidiaBusId != null) cfg.nvidiaBusId;
         };
       };
-
-      services.supergfxd.enable = true;
     })
 
     (mkIf (cfg.enable && config.services.desktopManager.gnome.enable) {
       environment.systemPackages =
         with pkgs;
         (with gnomeExtensions; [
-          gpu-supergfxctl-switch
+          cardwire-gpu-toggle
         ]);
       programs.dconf = {
         enable = true;
@@ -79,7 +77,7 @@ in
             settings = {
               "org/gnome/shell" = {
                 enabled-extensions = with pkgs.gnomeExtensions; [
-                  gpu-supergfxctl-switch.extensionUuid
+                  cardwire-gpu-toggle.extensionUuid
                 ];
               };
             };

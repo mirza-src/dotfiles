@@ -113,6 +113,7 @@ rec {
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          config.cudaSupport = true;
           # Adding an overlay to allow access to all packages through nixpkgs
           overlays = [
             vscode-extensions.overlays.default

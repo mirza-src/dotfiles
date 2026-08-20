@@ -25,6 +25,7 @@ in
     home.homeDirectory = lib.mkDefault "/home/${username}";
     nix.package = lib.mkDefault pkgs.nix;
     nixpkgs.config.allowUnfree = lib.mkDefault true;
+    nixpkgs.config.cudaSupport = lib.mkDefault true;
     nixpkgs.config.permittedInsecurePackages = [
       "electron-39.8.10"
     ];

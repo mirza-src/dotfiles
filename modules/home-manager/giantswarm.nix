@@ -17,21 +17,28 @@ in
     home.packages = (
       with pkgs;
       [
-        gojq
-        teleport
-        helm-schema-gen
-        cert-manager.helm-tool
-        nancy
         go
+        jq
+        yq-go
+        teleport
+        github-cli
+
         tilt
         kind
-        clusterctl
-        fluxcd
 
+        nancy
+        renovate
+        vendir
+        kube-linter
+        pre-commit
+        helm-docs
+        # kubernetes-helm
+        (pkgs.wrapHelm pkgs.kubernetes-helm { plugins = with kubernetes-helmPlugins; [ helm-schema ]; })
+
+        _1password-cli
         (_1password-gui.override {
           polkitPolicyOwners = [ config.home.username ];
         })
-        _1password-cli
       ]
       ++ (with giantswarm; [
         devctl
@@ -41,6 +48,11 @@ in
         opsctl
         gsctl
         nancy-fixer
+        architect
+
+        helm-values-gen
+        schemalint
+        schemadocs
       ])
     );
 

@@ -80,7 +80,6 @@ rec {
       "https://ezkea.cachix.org"
       "https://devenv.cachix.org"
       "https://cache.nixos-cuda.org"
-      "https://cache.garnix.io"
       "https://attic.xuyh0120.win/lantian"
     ];
     extra-trusted-public-keys = [
@@ -92,7 +91,6 @@ rec {
       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     ];
   };

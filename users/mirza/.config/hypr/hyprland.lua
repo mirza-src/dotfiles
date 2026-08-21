@@ -11,8 +11,10 @@ end)
 
 hl.config({
 	input = {
-		kb_layout = "us",
+		-- empty inherits XKB_DEFAULT_LAYOUT (libxkbcommon), falls back to "us"
+		kb_layout = "",
 		numlock_by_default = true,
+		follow_mouse = 0,
 		touchpad = {
 			tap_to_click = true,
 			natural_scroll = true,
@@ -31,7 +33,7 @@ hl.config({
 		shadow = {
 			enabled = true,
 			range = 30,
-			render_power = 5,
+			render_power = 4,
 			offset = "0 5",
 			color = "rgba(00000070)",
 		},

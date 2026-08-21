@@ -23,6 +23,26 @@ binds {
     Mod+Shift+9 { move-column-to-workspace "9"; }
     Mod+Shift+0 { move-column-to-workspace "0"; }
 
+    // === Move to Monitor Override ===
+    Mod+Shift+Alt+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Alt+Down  { move-column-to-monitor-down; }
+    Mod+Shift+Alt+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Alt+Right { move-column-to-monitor-right; }
+    Mod+Shift+Alt+H     { move-column-to-monitor-left; }
+    Mod+Shift+Alt+J     { move-column-to-monitor-down; }
+    Mod+Shift+Alt+K     { move-column-to-monitor-up; }
+    Mod+Shift+Alt+L     { move-column-to-monitor-right; }
+
+    // === Move Workspace to Monitor ===
+    Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
+    Mod+Shift+Ctrl+Down  { move-workspace-to-monitor-down; }
+    Mod+Shift+Ctrl+Up    { move-workspace-to-monitor-up; }
+    Mod+Shift+Ctrl+Right { move-workspace-to-monitor-right; }
+    Mod+Shift+Ctrl+H     { move-workspace-to-monitor-left; }
+    Mod+Shift+Ctrl+J     { move-workspace-to-monitor-down; }
+    Mod+Shift+Ctrl+K     { move-workspace-to-monitor-up; }
+    Mod+Shift+Ctrl+L     { move-workspace-to-monitor-right; }
+
     // === Application Launchers ===
     Mod+Return hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
 }

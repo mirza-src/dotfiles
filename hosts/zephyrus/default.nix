@@ -19,7 +19,7 @@
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia
 
     inputs.hyprland.nixosModules.default
-    inputs.dank-material-shell.nixosModules.greeter
+    inputs.dank-greeter.nixosModules.default
   ];
 
   boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
@@ -60,7 +60,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   services.xserver.enable = true;
-  programs.dank-material-shell.greeter = {
+  services.displayManager.dms-greeter = {
     enable = true;
     compositor.name = "niri";
   };
@@ -71,7 +71,8 @@
   programs.niri.enable = true;
   # Use downstream niri for virtual display support
   # Until this is merged: https://github.com/niri-wm/niri/pull/3800
-  programs.niri.package = inputs.niri-pkg.packages.${pkgs.system}.niri;
+  # NOTE: Upstream pkg is broken for now
+  # programs.niri.package = inputs.niri-pkg.packages.${pkgs.system}.niri;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = false;
 

@@ -61,7 +61,7 @@ in
       ];
       services.asusd.enable = true;
       programs.rog-control-center.enable = true;
-      services.asus-dialpad-driver.enable = false;
+      hardware.asus-dialpad-driver.enable = false;
     })
     (lib.mkIf cfg.ghelper.enable {
       environment.systemPackages = [ cfg.ghelper.package ];

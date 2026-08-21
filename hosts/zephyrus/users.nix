@@ -1,8 +1,8 @@
 { lib, config, ... }:
 {
-  programs.dank-material-shell.greeter.configHome = "/home/mirza";
-  programs.dank-material-shell.greeter.compositor.customConfig =
-    lib.mkIf (config.programs.dank-material-shell.greeter.compositor.name == "niri")
+  services.displayManager.dms-greeter.configHome = "/home/mirza";
+  services.displayManager.dms-greeter.compositor.customConfig =
+    lib.mkIf (config.services.displayManager.dms-greeter.compositor.name == "niri")
       ''
         hotkey-overlay {
           skip-at-startup

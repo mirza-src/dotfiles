@@ -50,6 +50,10 @@ rec {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dank-greeter = {
+      url = "github:AvengeMedia/dank-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     danksearch = {
       url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";

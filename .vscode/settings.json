@@ -1,5 +1,5 @@
 {
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "extensions.autoCheckUpdates": false,
   "terminal.integrated.gpuAcceleration": "off",
 
@@ -30,7 +30,7 @@
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "chat.viewSessions.orientation": "stacked",
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
   "nix.formatterPath": "nixfmt",

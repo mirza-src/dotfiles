@@ -15,6 +15,12 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "LG Electronics LG ULTRAFINE 406NTGYAP255" {
+    mode "3840x2160@144"
+    scale 2
+    position x=1440 y=0
+}
+
 output "TCL Corporation Beyond TV 0x00010000" {
     mode "3840x2160@119.880"
     scale 2

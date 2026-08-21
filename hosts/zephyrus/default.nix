@@ -19,6 +19,7 @@
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia
 
     inputs.hyprland.nixosModules.default
+    inputs.mangowm.nixosModules.mango
     inputs.dank-greeter.nixosModules.default
   ];
 
@@ -65,9 +66,9 @@
     compositor.name = "niri";
   };
 
-  modules.gnome.enable = false;
-  programs.hyprland.enable = true;
   programs.uwsm.enable = true;
+  programs.hyprland.enable = true;
+  programs.mango.enable = true;
   programs.niri.enable = true;
   # Use downstream niri for virtual display support
   # Until this is merged: https://github.com/niri-wm/niri/pull/3800

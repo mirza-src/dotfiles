@@ -58,6 +58,7 @@ in
     services.accounts-daemon.enable = true;
     environment.systemPackages = with pkgs; [
       git
+      ryzenadj
       kdiskmark
     ];
 

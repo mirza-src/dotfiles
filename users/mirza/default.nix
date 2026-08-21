@@ -213,7 +213,6 @@ in
         vscjava.vscode-java-dependency
 
         haskell.haskell
-        justusadam.language-haskell
         tomoki1207.pdf
         hashicorp.hcl
         hashicorp.terraform
@@ -242,13 +241,12 @@ in
     catppuccin
 
     # Graphical applications
+    discord
     libreoffice
     google-chrome
     veracrypt
     vlc
     protonplus
-    mongodb-compass
-    drawio
     mailspring
     rocketchat-desktop
 

@@ -21,7 +21,7 @@
     wget
     curl
     jq
-    yq
+    yq-go
 
     # Device management
     acpi

@@ -37,8 +37,6 @@ in
       "flakes"
     ];
     nix.settings.trusted-users = [ "@wheel" ];
-    nix.settings.substituters = nixConfig.extra-substituters;
-    nix.settings.trusted-public-keys = nixConfig.extra-trusted-public-keys;
     home-manager.useGlobalPkgs = lib.mkDefault true;
     home-manager.useUserPackages = lib.mkDefault true;
 
